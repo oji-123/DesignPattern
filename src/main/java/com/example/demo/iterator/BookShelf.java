@@ -1,24 +1,28 @@
 package com.example.demo.iterator;
 
-public class BookShelf implements Iteratable<Book> {
-	public Book[] books;
-	private int last = 0;
+import java.util.ArrayList;
+import java.util.List;
 
-	public BookShelf(int maxsize) {
-		this.books = new Book[maxsize];
+public class BookShelf implements Iteratable<Book> {
+	// 最大容量を最初に決定しない
+	public List<Book> books;
+
+	// コンストラクタでは、最初に最大許容数を指定しない
+	public BookShelf(int initialize) {
+		this.books = new ArrayList<Book>(initialize);
 	}
 
 	public Book getBookAt(int index) {
-		return books[index];
+		return books.get(index);
 	}
 
 	public void appendBook(Book book) {
-		this.books[last] = book;
-		last++;
+		// 追加の方法をArrayListの方法に変更
+		this.books.add(book);
 	}
 
 	public int getLength() {
-		return last;
+		return books.size();
 	}
 
 	@Override
