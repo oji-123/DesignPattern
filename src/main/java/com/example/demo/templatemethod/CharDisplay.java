@@ -1,6 +1,6 @@
 package com.example.demo.templatemethod;
 
-public class CharDisplay extends AbstractDisplay {
+public class CharDisplay implements AbstractDisplay {
 	private char ch;
 
 	// コンストラクタ
@@ -9,19 +9,19 @@ public class CharDisplay extends AbstractDisplay {
 	}
 
 	@Override
-	protected void open() {
+	public void open() {
 		// 開始文字「<<」を出力
 		System.out.print("<<");
 	}
 
 	@Override
-	protected void print() {
+	public void print() {
 		// フィールドに保存しておいた文字を1回表示
 		System.out.print(ch);
 	}
 
 	@Override
-	protected void close() {
+	public void close() {
 		// 終了文字「>>」を出力
 		System.out.println(">>");
 	}

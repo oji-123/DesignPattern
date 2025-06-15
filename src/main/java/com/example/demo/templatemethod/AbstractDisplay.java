@@ -1,14 +1,14 @@
 package com.example.demo.templatemethod;
 
-public abstract class AbstractDisplay {
-	protected abstract void open();
+public abstract interface AbstractDisplay {
+	void open();
 
-	protected abstract void print();
+	void print();
 
-	protected abstract void close();
+	void close();
 
 	// 5回出力することは固定
-	public final void display() {
+	public default void display() {
 		open();
 		for (int i = 0; i < 5; i++) {
 			print();

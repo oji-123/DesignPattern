@@ -1,6 +1,6 @@
 package com.example.demo.templatemethod;
 
-public class StringDisplay extends AbstractDisplay {
+public class StringDisplay implements AbstractDisplay {
 	private String string;
 	private int width;
 
@@ -11,18 +11,18 @@ public class StringDisplay extends AbstractDisplay {
 	}
 
 	@Override
-	protected void open() {
+	public void open() {
 		printLine();
 	}
 
 	@Override
-	protected void print() {
+	public void print() {
 		// フィールドに保存しておいた文字を1回表示
 		System.out.println("|" + string + "|");
 	}
 
 	@Override
-	protected void close() {
+	public void close() {
 		printLine();
 	}
 

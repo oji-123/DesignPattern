@@ -1,0 +1,11 @@
+3-1.java.io.InputStreamクラスにて、サブクラスで実装することを要請しているクラス
+
+・readメソッド
+
+3-2.サンプルプログラムAbstractDisplayクラスのdisplayメソッドがfinalの理由
+
+・子クラスにて、オーバライドされないこと、実装を必要としないことを明記している。
+
+3-3.AbstractDisplayクラスのopen, print, closeメソッドを継承関係及び、同一パッケージにあるクラスのみ呼び出せるようにするには。
+
+・public → protectedに修正する。
