@@ -1,0 +1,22 @@
+Q.IDCardクラスのコンストラクタのアクセス修飾子がなにもついていないのはなぜか。
+
+public class IDCard extends Product {
+	private String owner;
+
+	public IDCard(String owner) {
+		System.out.println(owner + "のカードを作ります。");
+		this.owner = owner;
+	}
+
+A.同じパッケージ内のクラスしか呼び出せないようにしている。
+そのため、インスタンスの生成をcom.example.demo.factorymethod.idcardパッケージ内で行うように制限している。
+
+Q.Productクラスに以下のようにコンストラクタを追加してエラーになるのはなぜか。
+
+public abstract class Product {
+    public abstract Product();
+	public abstract void use();
+}
+
+A.子クラスでは、コンストラクタとなるメソッド名が異なるため。✕
+Javaではabstractなコンストラクタは作成できないため。○
