@@ -1,9 +1,18 @@
 package com.example.demo.singleton.question;
 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
 public class Triple {
-	private Triple alpha = new Triple();
-	private Triple beta = new Triple();
-	private Triple gamma = new Triple();
+
+	private static Map<String, Triple> map = new HashMap<>();
+
+	static {
+		String[] names = { "ALPHA", "BETA", "GAMMA" };
+		Arrays.stream(names).forEach(s -> map.put(s, new Triple()));
+
+	}
 
 	private Triple() {
 		System.out.println("インスタンスを生成しました。");
@@ -11,15 +20,6 @@ public class Triple {
 
 	// name, インスタンスでMapで持っても良い。
 	public Triple getInstance(String name) throws Exception {
-		if (name.equals("alpha")) {
-			return alpha;
-		} else if (name.equals("beta")) {
-			return beta;
-		} else if (name.equals("gamma")) {
-			return gamma;
-		}
-
-		// 上記以外はエラー
-		throw new Exception("インスタンスの指定名が不正です。");
+		return map.get(name);
 	}
 }
