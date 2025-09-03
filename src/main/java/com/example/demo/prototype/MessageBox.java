@@ -1,11 +1,15 @@
 package com.example.demo.prototype;
 
-public class MessageBox implements Product {
+public class MessageBox extends Product {
 
 	private char decochar;
 
 	public MessageBox(char decochar) {
 		this.decochar = decochar;
+	}
+
+	public MessageBox(MessageBox prototype) {
+		this.decochar = prototype.decochar;
 	}
 
 	@Override
@@ -24,13 +28,6 @@ public class MessageBox implements Product {
 
 	@Override
 	public Product createCopy() {
-		Product p = null;
-		try {
-			p = (Product) clone();
-		} catch (CloneNotSupportedException e) {
-			e.printStackTrace();
-		}
-		return p;
+		return new MessageBox(this);
 	}
-
 }

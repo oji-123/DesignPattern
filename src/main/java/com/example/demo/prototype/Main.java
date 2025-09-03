@@ -5,9 +5,13 @@ public class Main {
 	public static void main(String[] args) {
 		// インスタンスの準備
 		Manager manager = new Manager();
-		UnderlinePen upen = new UnderlinePen('-');
-		MessageBox mbox = new MessageBox('*');
-		MessageBox sbox = new MessageBox('/');
+		UnderlinePen baseUpen = new UnderlinePen('-');
+		MessageBox baseMbox = new MessageBox('*');
+		MessageBox baseSbox = new MessageBox('/');
+
+		UnderlinePen upen = (UnderlinePen) baseUpen.createCopy();
+		MessageBox mbox = (MessageBox) baseMbox.createCopy();
+		MessageBox sbox = (MessageBox) baseSbox.createCopy();
 
 		// インスタンスの登録
 		manager.register("strong message", upen);
