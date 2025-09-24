@@ -1,6 +1,6 @@
 package com.example.demo.builder;
 
-public abstract class Builder {
+public interface Builder {
 	public abstract void makeTitle(String title);
 
 	public abstract void makeString(String str);

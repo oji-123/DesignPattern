@@ -3,7 +3,7 @@ package com.example.demo.builder;
 import java.io.FileWriter;
 import java.io.Writer;
 
-public class HTMLBuilder extends Builder {
+public class HTMLBuilder implements Builder {
 
 	private String fileName = "untitled.html";
 	private StringBuilder sb = new StringBuilder();

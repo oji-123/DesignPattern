@@ -1,6 +1,6 @@
 package com.example.demo.builder;
 
-public class TextBuilder extends Builder {
+public class TextBuilder implements Builder {
 
 	private StringBuilder sb = new StringBuilder();
 

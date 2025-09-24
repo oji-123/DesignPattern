@@ -10,11 +10,11 @@ public class Director {
 
 	// 文書を作るクラス
 	public void construct() {
-		builder.makeTitle("Greeting");
-		builder.makeString("一般的なあいさつ");
-		builder.makeItems(new String[] { "How are you?", "Hello", "Hi" });
-		builder.makeString("時間に応じたあいさつ");
-		builder.makeItems(new String[] { "Good morning", "Good afternoon", "Good evening" });
+		builder.makeTitle("fluit");
+		builder.makeString("果物の一覧");
+		builder.makeItems(new String[] { "banana", "apple", "grape" });
+		builder.makeString("変わった果物");
+		builder.makeItems(new String[] { "cranberry", "lime", "olive" });
 		builder.close();
 	}
 }
