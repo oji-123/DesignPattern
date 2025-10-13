@@ -41,9 +41,12 @@ public class Main {
 		newsTray.add(news3);
 
 		// Page
-		Page page = factory.createPage("Blog and News", "Hiroshi Yuki");
-		page.add(blogTray);
-		page.add(newsTray);
+		//		Page page = factory.createPage("Blog and News", "Hiroshi Yuki");
+		//		page.add(blogTray);
+		//		page.add(newsTray);
+
+		// Yahooのリンクが表示されるように修正
+		Page page = factory.createYahooPage();
 
 		page.output(fileName);
 	}

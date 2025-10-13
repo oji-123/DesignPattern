@@ -20,4 +20,11 @@ public abstract class Factory {
 	public abstract Tray createTray(String caption);
 
 	public abstract Page createPage(String title, String author);
+
+	public Page createYahooPage() {
+		Link link = createLink("Yahoo", "https://www.yahoo.co.jp/");
+		Page page = createPage("Yahoo", "Yahoo");
+		page.add(link);
+		return page;
+	}
 }
