@@ -19,12 +19,14 @@ public class Player {
 
 	// 勝った
 	public void win() {
+		strategy.study(true);
 		winCount++;
 		gameCount++;
 	}
 
 	// 負けた
 	public void lose() {
+		strategy.study(false);
 		loseCount++;
 		gameCount++;
 	}
