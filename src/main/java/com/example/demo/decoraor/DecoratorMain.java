@@ -11,12 +11,17 @@ public class DecoratorMain {
 
 		Display b4 = new SideBorder(
 				new FullBorder(
-						new SideBorder(
+						new UpDownBorder(
 								new FullBorder(
-										new StringDisplay("Hello, test")),
+										new UpDownBorder(
+												new StringDisplay("Hello, test"),
+												'=')),
 								'*')),
 				'/');
 
 		b4.show();
+
+		Display b5 = new UpDownBorder(b1, '$');
+		b5.show();
 	}
 }
