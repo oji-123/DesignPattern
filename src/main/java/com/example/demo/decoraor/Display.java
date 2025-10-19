@@ -1,0 +1,15 @@
+package com.example.demo.decoraor;
+
+public abstract class Display {
+	public abstract int getColumns();
+
+	public abstract int getRows();
+
+	public abstract String getRowsText(int row);
+
+	public void show() {
+		for (int i = 0; i < getRows(); i++) {
+			System.out.println(getRowsText(i));
+		}
+	}
+}
