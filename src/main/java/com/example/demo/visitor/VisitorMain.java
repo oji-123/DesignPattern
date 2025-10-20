@@ -16,7 +16,12 @@ public class VisitorMain {
 
 		yuki.add(new File("diary.html", 100));
 
-		rootDir.accept(new ListVisitor());
-	}
+		FileFindVisitor ffv = new FileFindVisitor(".html");
+		rootDir.accept(ffv);
 
+		System.out.println("HTML files are:");
+		for (Entry file : ffv.getFoundFiles()) {
+			System.out.println(file);
+		}
+	}
 }
