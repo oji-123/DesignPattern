@@ -15,14 +15,27 @@ public abstract class Support {
 		return next;
 	}
 
+	//	// トラブル解決の手順を定める
+	//	public void support(Trouble trouble) {
+	//		if (resolve(trouble)) {
+	//			done(trouble);
+	//		} else if (next != null) {
+	//			next.support(trouble);
+	//		} else {
+	//			fail(trouble);
+	//		}
+	//	}
+
 	// トラブル解決の手順を定める
 	public void support(Trouble trouble) {
-		if (resolve(trouble)) {
-			done(trouble);
-		} else if (next != null) {
-			next.support(trouble);
-		} else {
-			fail(trouble);
+		for (Support obj = this; true; obj = obj.next) {
+			if (obj.resolve(trouble)) {
+				obj.done(trouble);
+				break;
+			} else if (obj.next == null) {
+				obj.fail(trouble);
+				break;
+			}
 		}
 	}
 
