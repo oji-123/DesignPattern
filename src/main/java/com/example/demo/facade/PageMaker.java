@@ -23,4 +23,23 @@ public class PageMaker {
 			e.printStackTrace();
 		}
 	}
+
+	public static void makeLinkPage(String filename) {
+		try {
+			Properties mailProp = Database.getProperties("maildata");
+
+			HtmlWriter writer = new HtmlWriter(new FileWriter(filename));
+			writer.title("Link page");
+
+			for (String key : mailProp.stringPropertyNames()) {
+				writer.mailTo(key, mailProp.getProperty(key));
+				writer.paragraph("");
+			}
+
+			writer.close();
+			System.out.println("Link Page is created");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }

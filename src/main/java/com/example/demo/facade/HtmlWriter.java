@@ -19,7 +19,7 @@ public class HtmlWriter {
 		writer.write("</head>");
 		writer.write("<body>");
 		writer.write("\n");
-		writer.write("<h1>" + title + "/<h1>");
+		writer.write("<h1>" + title + "</h1>");
 		writer.write("\n");
 	}
 
