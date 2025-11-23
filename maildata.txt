@@ -1,0 +1,4 @@
+hyuki@exmaple.com=Hiroshi Yuki
+hanako@exmaple.com=Hanako Sato
+tomura@exmaple.com=Tomura
+mamoru@exmaple.com=Mamoru Takahashi
