@@ -58,6 +58,7 @@ public class Gamer {
 	public void restoreMemento(Memento memento) {
 		this.money = memento.getMoney();
 		this.fruits = memento.getFruits();
+		System.out.println("現在の数字は" + memento.getNumber() + "です");
 	}
 
 	// フルーツを一個得る
