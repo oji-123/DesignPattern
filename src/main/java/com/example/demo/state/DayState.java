@@ -15,12 +15,14 @@ public class DayState implements State {
 	public void doClock(Context context, int hour) {
 		if (hour < 9 || 17 <= hour) {
 			context.chageState(NightState.getInstance());
+		} else if (hour == 12) {
+			context.chageState(LunchTimeState.getInstance());
 		}
 	}
 
 	@Override
 	public void doUse(Context context) {
-		context.recordLog("金庫仕様(昼間)");
+		context.recordLog("金庫使用(昼間)");
 	}
 
 	@Override
@@ -35,6 +37,6 @@ public class DayState implements State {
 
 	@Override
 	public String toString() {
-		return "{昼間}";
+		return "{ランチタイム}";
 	}
 }

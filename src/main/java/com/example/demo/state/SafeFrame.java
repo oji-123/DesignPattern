@@ -7,10 +7,8 @@ import java.awt.Frame;
 import java.awt.Panel;
 import java.awt.TextArea;
 import java.awt.TextField;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
-public class SafeFrame extends Frame implements ActionListener, Context {
+public class SafeFrame extends Frame implements Context {
 	private TextField textClock = new TextField(60); // 現在時刻表示
 	private TextArea textScreen = new TextArea(10, 60); // 警備センター出力
 	private Button buttonUse = new Button("金庫使用"); // 金庫使用ボタン
@@ -39,31 +37,13 @@ public class SafeFrame extends Frame implements ActionListener, Context {
 		panel.add(buttonExit);
 		// パネルを配置
 		add(panel, BorderLayout.SOUTH);
+		buttonUse.addActionListener(e -> state.doUse(this));
+		buttonAlarm.addActionListener(e -> state.doAlarm(this));
+		buttonPhone.addActionListener(e -> state.doPhone(this));
+		buttonExit.addActionListener(e -> System.exit(0));
 		// 表示
 		pack();
 		setVisible(true);
-		// リスナーの設定
-		buttonUse.addActionListener(this);
-		buttonAlarm.addActionListener(this);
-		buttonPhone.addActionListener(this);
-		buttonExit.addActionListener(this);
-	}
-
-	// ボタンが押されたらここに来る
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		System.out.println(e.toString());
-		if (e.getSource() == buttonUse) { // 金庫ボタン
-			state.doUse(this);
-		} else if (e.getSource() == buttonAlarm) { // 非常ベルボタン
-			state.doAlarm(this);
-		} else if (e.getSource() == buttonPhone) { // 終了ボタン
-			state.doPhone(this);
-		} else if (e.getSource() == buttonExit) { // 終了ボタン
-			System.exit(0);
-		} else {
-			System.out.println("?");
-		}
 	}
 
 	// 時刻の設定
