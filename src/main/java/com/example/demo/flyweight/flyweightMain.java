@@ -1,0 +1,14 @@
+package com.example.demo.flyweight;
+
+public class flyweightMain {
+
+	public static void main(String[] args) {
+		if (args.length == 0) {
+			System.out.println("Usage: java Maiin digits");
+			System.out.println("Example: java Main 1212132");
+			System.exit(0);
+		}
+		BigString bs = new BigString(args[0]);
+		bs.print();
+	}
+}
